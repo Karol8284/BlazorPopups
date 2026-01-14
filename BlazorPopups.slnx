@@ -1,6 +1,6 @@
 <Solution>
+  <Project Path="Blazorpopups.Core.Test/Blazorpopups.Core.Test.csproj" Id="433a9de7-cf75-423b-8661-ba97c0ad2a7d" />
   <Project Path="BlazorPopups.Core/BlazorPopups.Core.csproj" />
-  <Project Path="BlazorPopups.Demo/BlazorPopups.Demo.Client/BlazorPopups.Demo.Client.csproj" Id="4c526edf-3ade-4b6f-a48a-2e949c6ccc6f" />
-  <Project Path="BlazorPopups.Demo/BlazorPopups.Demo/BlazorPopups.Demo.csproj" Id="cc1daac4-35f5-4a87-a314-051d72ee0f05" />
+  <Project Path="Blazorpopups.MudUI.Test/Blazorpopups.MudUI.Test.csproj" Id="d673df27-6ff0-4923-8a54-d2fc62e6f6a1" />
   <Project Path="BlazorPopups.MudUI/BlazorPopups.MudUI.csproj" />
 </Solution>
