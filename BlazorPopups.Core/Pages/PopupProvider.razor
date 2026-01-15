@@ -1,0 +1,36 @@
+﻿@using BlazorPopups.Core.Services
+@inject PopupService Popup
+
+<link href="_content/BlazorPopups.Core/css/popup.css" rel="stylesheet" />
+
+@if (Visible)
+{
+    <div class="popup">
+        <p>@Message</p>
+        <button @onclick="Close">X</button>
+    </div>
+}
+
+@code {
+    private bool Visible = false;
+    private string Message = "";
+
+    protected override void OnInitialized()
+    {
+        Popup.OnShow += ShowPopup;
+    }
+
+    void ShowPopup(string msg)
+    {
+        Message = msg;
+        Visible = true;
+        StateHasChanged();
+    }
+
+    void Close()
+    {
+        Message = "";
+        Visible = false;
+        StateHasChanged();
+    }
+}

@@ -2,7 +2,9 @@
   {
     "outputFile": "wwwroot/css/popup.css",
     "inputFile": "wwwroot/css/popup.scss",
-    "minify": true
+    "minify": {
+      "enabled": true
+    }
 
   }
 ]

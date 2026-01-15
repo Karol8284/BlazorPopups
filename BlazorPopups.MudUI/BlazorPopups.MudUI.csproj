@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="BuildWebCompiler" Version="1.12.405" />
+    <PackageReference Include="MudBlazor" Version="8.15.0" />
   </ItemGroup>
 
 

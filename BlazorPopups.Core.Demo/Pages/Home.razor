@@ -1,7 +1,20 @@
-﻿@page "/"
+﻿@using BlazorPopups.Core.Services
+@page "/"
 
-<PageTitle>Home</PageTitle>
+@inject PopupService Popup
 
-<h1>Hello, world!</h1>
 
-Welcome to your new app.
+<PageTitle> Blazor Popup Demo -> Home Page</PageTitle>
+<p class="h3">Test popup</p>
+
+<p class="h3"> Test popup</p>
+
+<button class="" @onclick='() => Popup.Show("Test popup from Home page, BlazorPopupClose")'> Show Popup </button>'
+
+@code{
+    void BlazorPopupClose()
+    {
+        Console.WriteLine("BlazorPopup Close");
+        
+    }
+}
