@@ -1,5 +1,7 @@
 ﻿@using BlazorPopups.Core.Services
+@using System.Threading.Tasks
 @inject PopupService Popup
+@implements IDisposable
 
 <link href="_content/BlazorPopups.Core/css/popup.css" rel="stylesheet" />
 
@@ -7,6 +9,7 @@
 {
     <div class="popup">
         <p>@Message</p>
+        <button @onclick="() => Close()">X</button>
         <button @onclick="Close">X</button>
     </div>
 }
@@ -22,15 +25,25 @@
 
     void ShowPopup(string msg)
     {
-        Message = msg;
-        Visible = true;
-        StateHasChanged();
-    }
+        InvokeAsync(() =>
+        {
+            Message = msg;
+            Visible = true;
+            StateHasChanged();
 
-    void Close()
+        });
+    }
+    public void Dispose()
     {
+        Popup.OnShow -= ShowPopup;
+    }
+    async Task Close()
+    {
+        System.Console.WriteLine("Close()");
         Message = "";
         Visible = false;
-        StateHasChanged();
+        Console.WriteLine("Message: " + Message);
+        Console.WriteLine("Visible: " + Visible);
+        await InvokeAsync(StateHasChanged);
     }
 }
